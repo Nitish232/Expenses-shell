@@ -1,4 +1,4 @@
-userid = $(id -u)
+userid =$(id -u)
 timestamp=$(date +%F-%H-%M-%S)
 script_name=$(echo $0 | cut -d "." -f1)
 logfile=/tmp/$script_name-$timestamp.log
