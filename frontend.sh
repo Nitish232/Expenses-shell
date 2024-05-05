@@ -13,7 +13,7 @@ VALIDATE(){
         echo -e "$2....$R FAILURE $N"
         exit 1
     else 
-        echo -e "$2....$R Success $N"
+        echo -e "$2....$G Success $N"
     fi
 }
 
@@ -44,7 +44,7 @@ cd /usr/share/nginx/html &>>$logfile
 unzip /tmp/frontend.zip &>>$logfile
 VALIDATE $? "Extracting frontend code"
 
-cp /home/ec2-user/expense-shell/expense.conf /etc/nginx/default.d/expense.conf &>>$logfile
+cp /home/ec2-user/Expenses-shell/expense.conf /etc/nginx/default.d/expense.conf &>>$logfile
 VALIDATE $? "Copied expense conf"
 
 systemctl restart nginx &>>$logfile
