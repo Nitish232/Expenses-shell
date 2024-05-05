@@ -42,7 +42,7 @@ VALIDATE $? "Starting mysql Server"
 mysql -h 172.31.31.96 -uroot -p${mysql_root_password} -e 'show databases;' &>>$logfile
 if [ $? -ne 0 ]
 then 
-    mysql_root_password --set-root-pass ${mysql_root_password} &>>$logfile
+    mysql_root_installation --set-root-pass ${mysql_root_password} &>>$logfile
     VALIDATE $? "Mysql root password setup"
 else
     echo -e "Mysql root Password is already setup...$Y SKIPPING $N"
